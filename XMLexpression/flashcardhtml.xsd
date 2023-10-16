@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="html">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="head">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title" type="xs:string"/>
+                            <xs:element name="script">
+                                <xs:complexType>
+                                    <xs:attribute name="type" fixed="text/javascript"/>
+                                    <xs:attribute name="src" fixed="miniformvalidator.js"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="body">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="h1" type="xs:string" minOccurs="0"></xs:element>
+                            <xs:element name="form">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ol">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="li" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType mixed="true">
+                                                            <xs:sequence>
+                                                                <xs:element name="input">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="type" fixed="text"/>
+                                                                        <xs:attribute name="id">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:pattern value="q[0-9]+"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="data-answer" use="required" type="xs:decimal"/>
+                                                                        <xs:attribute name="size" fixed="8"/>
+                                                                    </xs:complexType>
+                                                                    
+                                                                    
+                                                                </xs:element>
+                                                                <xs:element name="span">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>This span is a hack to avoid the
+                                                                        cos-element-declaration constraint.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType mixed="true">
+                                                                        <xs:sequence>
+                                                                            <xs:element name="input">
+                                                                                <xs:complexType>
+                                                                                    <xs:attribute name="type" fixed="button"/>
+                                                                                    <xs:attribute name="onclick">
+                                                                                        <xs:simpleType>
+                                                                                            <xs:restriction base="xs:string">
+                                                                                                <xs:pattern value="check\(document.getElementById\('q[0-9]+'\)\)"/>
+                                                                                            </xs:restriction>
+                                                                                        </xs:simpleType>                                                                            
+                                                                                    </xs:attribute>
+                                                                                    <xs:attribute name="value" fixed="Check answer"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                    </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                            <xs:key name="idkey">
+                                                <xs:selector xpath="./li/input"></xs:selector>
+                                                <xs:field xpath="@id"></xs:field>
+                                            </xs:key>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:element>
+
+</xs:schema>

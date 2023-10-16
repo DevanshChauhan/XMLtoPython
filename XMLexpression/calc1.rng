@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RelaxNG supports only very simple datatype: text. If you want more complex ones, 
+  you can 'import' them from XML Schema (another XML schema language) by including the following line: 
+  
+   datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+  
+  with this line, we could have written 
+  
+   int-description = element int { attribute value { xsd:integer }, empty }
+  
+  and suitable validating parsers would have understood this, i.e., rejected elements like <int value="a"/> 
+-->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <start>
+    <ref name="expression-description"/>
+  </start>
+  <define name="expression-description">
+    <element name="expression">
+      <ref name="expr-description"/>
+    </element>
+  </define>
+  <define name="expr-description">
+    <choice>
+      <ref name="plus-description"/>
+      <ref name="times-description"/>
+      <ref name="minus-description"/>
+      <ref name="int-description"/>
+    </choice>
+  </define>
+  <!--
+     plus and times are n-ary, where n is greater
+    than 2. 
+  -->
+  <define name="plus-description">
+    <element name="plus">
+      <ref name="expr-description"/>
+      <oneOrMore>
+        <ref name="expr-description"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="times-description">
+    <element name="times">
+      <ref name="expr-description"/>
+      <oneOrMore>
+        <ref name="expr-description"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <!-- Note that minus is a *binary* operation -->
+  <define name="minus-description">
+    <element name="minus">
+      <ref name="expr-description"/>
+      <ref name="expr-description"/>
+    </element>
+  </define>
+  <!--
+     Ints are empty elements. I use an attribute
+    for the value. For now, there's no special reason
+    for this; I put an *inadequate*
+    type constraint on it. It's not even shorter, viz.:
+       <int>576</int>
+       <int value="572"/>
+  -->
+  <define name="int-description">
+    <element name="int">
+      <attribute name="value"/>
+      <empty/>
+    </element>
+  </define>
+</grammar>

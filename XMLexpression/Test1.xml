@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expression>
+    <times>
+        <int value="-5"/>
+        <int value="-5"/>
+        <int value="-5"/>
+        <int value="-5"/>
+        <minus>
+            <int value="5"/>
+            <int value="-5"/>
+        </minus>
+        <minus>
+            <int value="5"/>
+            <int value="-5"/>
+        </minus>
+        <minus>
+            <int value="5"/>
+            <int value="-5"/>
+        </minus>
+        <minus>
+            <int value="5"/>
+            <int value="-5"/>
+        </minus>
+        <minus>
+            <int value="5"/>
+            <int value="-5"/>
+        </minus>
+        <plus>
+            <minus>
+                <int value="5"/>
+                <int value="-5"/>
+            </minus>
+            <minus>
+                <int value="5"/>
+                <int value="-5"/>
+            </minus>
+            <minus>
+                <int value="5"/>
+                <int value="-5"/>
+            </minus>
+            <minus>
+                <int value="5"/>
+                <int value="-5"/>
+            </minus>
+            <minus>
+                <int value="5"/>
+                <int value="-5"/>
+            </minus>
+       </plus>
+    </times>
+</expression>

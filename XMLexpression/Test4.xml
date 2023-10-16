@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expression>
+    <plus>
+        <times>
+            <int value="3"/>
+            <minus>
+                <int value="6"/>
+                <int value="2"/>
+            </minus>
+        </times>
+        <int> 3 </int>
+    </plus>
+</expression>

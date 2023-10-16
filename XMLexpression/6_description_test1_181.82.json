@@ -1,0 +1,36 @@
+{
+    "description": "",
+    "root": {
+        "description": {
+            "value": "181.82",
+            "humanReadableExpression": "-1000.0/(-5.5)"
+        },
+        "division": [
+            {
+                "dec": -1000.0
+            },
+            {
+                "description": {
+                    "value": "-5",
+                    "humanReadableExpression": "(-2.5)+(-3)"
+                },
+                "plus": [
+                    {
+                        "minus": [
+                            {
+                                "dec": 2.5
+                            }
+                        ]
+                    },
+                    {
+                        "minus": [
+                            {
+                                "int": 3
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

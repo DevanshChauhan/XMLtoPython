@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expression>
+    <plus>
+        <times>
+            <int value="3"/>
+            <minus>
+                <int value="6"/>
+                <times>
+                    <int value="344"/>
+                    <minus>
+                        <int value="315"/>
+                        <times>
+                            <int value="3"/>
+                            <int value="10"/>
+                            <int value="5"/>
+                            <int value="-2"/>
+                            <int value="3"/>
+                            <int value="4"/>
+                            <int value="6"/>
+                            <int value="4"/>
+                            <int value="-199"/>
+                            <plus>
+                                <int value="3"/>
+                                <int value="10"/>
+                                <int value="5"/>
+                                <int value="-2"/>
+                                <int value="3"/>
+                                <int value="4"/>
+                                <int value="6"/>
+                                <int value="4"/>
+                                <int value="-199"/>       
+                            </plus>                         
+                        </times>
+                    </minus>
+                </times>
+            </minus>
+        </times>
+        <times>
+            <int value="317"/>
+            <minus>
+                <int value="-5000"/>
+                <int value="-5000"/>
+            </minus>
+            <minus>
+                <int value="-123"/>
+                <int value="-22"/>
+            </minus>
+            <minus>
+                <int value="3"/>
+                <int value="-15"/>
+            </minus>
+        </times>
+    </plus>
+</expression>

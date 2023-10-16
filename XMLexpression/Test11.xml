@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expression>
+    <plus>
+        <times>
+            <int value="3"/>
+            <minus>
+                <int value="6"/>
+                <times>
+                    <int value="344"/>
+                    <minus>
+                        <int value="123.23131231234"/>
+                        <times>
+                            <int value="3"/>
+                            <minus>
+                                <int value="123.234234234"/>
+                                <int value="224324.2"/>
+                            </minus>
+                        </times>
+                    </minus>
+                </times>
+            </minus>
+        </times>
+        <times>
+            <int value="3.132124"/>
+            <minus>
+                <int value="123.3423"/>
+                <int value="224324.2"/>
+            </minus>
+        </times>
+    </plus>
+</expression>
